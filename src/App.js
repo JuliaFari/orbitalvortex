@@ -24,3 +24,17 @@ export default function App() {
     </Router>
   );
 }
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aluno" element={<Student />} />
+        <Route path="/professor" element={<Teacher />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
