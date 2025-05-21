@@ -1,22 +1,26 @@
-// Importações do Firebase (versão modular - SDK 9+)
+// Importações do Firebase (SDK v9+ modular)
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Configuração do seu projeto (substitua com seus dados!)
+// Configuração via variáveis de ambiente (do arquivo .env)
 const firebaseConfig = {
-  apiKey: "AIzaSyDaZoDSoZszgAcSN8ydXX01h7Eil8xmsQA", // Chave de API única do projeto
-  authDomain: "orbitalvortex-32ecc.firebaseapp.com", // Domínio de autenticação
-  projectId: "orbitalvortex-32ecc", // ID do projeto (não alterável)
-  storageBucket: "orbitalvortex-32ecc.firebasestorage.app", // Armazenamento de arquivos
-  messagingSenderId: "11126730021", // ID para notificações
-  appId: "1:11126730021:web:9d3922b5bbf4aac3a9fecc", // ID do aplicativo  
-  measurementId: "G-355FGTRKEL"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
 
-// Exporta os serviços que você vai usar
+// Exporta os serviços
 export const db = getFirestore(app); // Firestore (banco de dados)
-export const auth = getAuth(app); // Autenticação
+export const auth = getAuth(app);    // Autenticação
+
+/* 
+  Como usar em outros arquivos:
+  import { db, auth } from './services/firebase';
+*/
