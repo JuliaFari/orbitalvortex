@@ -27,3 +27,12 @@ export default function Login() {
     </form>
   );
 }
+import { auth } from './services/firebase';
+import { signInAnonymously } from "firebase/auth";
+
+const handleLogin = () => {
+  signInAnonymously(auth)
+    .then((userCredential) => {
+      console.log("Usuário logado:", userCredential.user.uid);
+    });
+};
