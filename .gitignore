@@ -22,3 +22,7 @@ dist/
 
 .env
 firebase.config.js
+
+# Arquivos de ambiente
+.env
+.env.local
