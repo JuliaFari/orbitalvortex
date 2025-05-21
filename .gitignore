@@ -1,0 +1,21 @@
+# Arquivos do Firebase e ambiente
+.firebaserc
+firebase.json
+.firebase/
+.env
+.env.local
+
+# Dependências
+node_modules/
+npm-debug.log*
+
+# Build
+build/
+dist/
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
