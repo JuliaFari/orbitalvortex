@@ -23,3 +23,12 @@ export default function Student() {
     </div>
   );
 }
+       import { db } from './services/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+
+const fetchLessons = async () => {
+  const querySnapshot = await getDocs(collection(db, "lessons"));
+  querySnapshot.forEach((doc) => {
+    console.log(doc.data());
+  });
+};
