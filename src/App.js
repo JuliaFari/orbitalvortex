@@ -14,6 +14,6 @@ export default function App() {
         <Route path="/student" element={<Student />} />
         <Route path="/professor" element={<Teacher />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
